@@ -1,8 +1,8 @@
 <template>
-    <div class="w-1/3  h-[90vh] p-16  overflow-y-auto fixed">
+    <div class="md:w-[25vw] w-[100vw]  md:h-[90vh] p-16 bg-[#AA9D8B] overflow-y-auto ">
         <ul>
             <NuxtLink  v-for="(d, index) in data" :key="index" :to="d.url">
-                <li class="mb-5 bg-green rounded-md p-2 dark:text-black font-bold ">
+                <li class="md:mb-10 mb-5 w-1/3 dark:text-brown p-2 font-bold ">
 
                     {{ d.name }}
 
@@ -16,12 +16,12 @@
 const data = ref(
     [
         {
-            name: "Url1",
-            url: "/new"
+            name: "About",
+            url: "/about"
         },
         {
-            name: "Url1",
-            url: "/new"
+            name: "Home",
+            url: "/"
         },
         {
             name: "Url1",
@@ -34,3 +34,9 @@ const data = ref(
     ]
 )
 </script>
+<style scoped>
+ .router-link-active li {
+  border-left:solid 5px #03B771;
+}
+
+</style>

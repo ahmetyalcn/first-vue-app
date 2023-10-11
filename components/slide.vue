@@ -3,12 +3,12 @@
 </script>
 
 <template >
-    <div>
+    <div class="md:hidden block">
         <div class="text-green cursor-pointer" @click="isOpen = true">
         <IconsSolidBar class="text-2xl"/>
         </div>
         <USlideover v-model="isOpen">
-            slide...
+            <SideMenu/>
         </USlideover>
     </div>
 </template>

@@ -9,11 +9,14 @@ export const useMainStore = defineStore('main',
         },
         actions: {
             addNote(note){
-                this.notes.push(note);
+                const obj = {
+                    title: note,
+                    id: this.getNotes.length
+                }
+                this.notes.unshift(obj);
             },
-            deleteNote(note){
-                console.log(note)
-                this.state.notes = this.notes.filter(n=>n.id !== note.id)
+            deleteNote(id){
+                this.notes = this.notes.filter(n=>n.id !== id)
             }
         }
     }
