@@ -36,7 +36,7 @@ const data = ref(
 </script>
 <style scoped>
  .router-link-active li {
-  border-left:solid 5px #03B771;
+  border-left:solid 5px #431D23;
 }
 
 </style>

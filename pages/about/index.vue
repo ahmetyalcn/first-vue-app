@@ -2,6 +2,7 @@
 useHead({
   title: "About"
 })
+
 </script>
 <template>
     <div>
