@@ -8,13 +8,13 @@ onMounted(async () => {
 <template>
     <div>
         <ul class="">
-         <li v-for="d in store.notes" class="dark:text-brown py-3 border-2 px-2 border-brown mb-2 flex justify-between ">
+         <li v-for="d in store.notes" class="dark:text-latte py-3 border-2 px-2 border-gray-300 dark:border-[#38BDF8] rounded-sm mb-2 flex justify-between ">
             <div>
                  <p class="font-bold"> {{ d.title }}</p>
           <p> {{ d.content }}</p>
             </div>
          
-          <div @click="store.deleteNote(d)" class="h-auto rounded-sm flex justify-center items-center cursor-pointer w-auto bg-red-500">
+          <div @click="store.deleteNote(d)" class="rounded-sm flex justify-center items-center cursor-pointer my-auto  h-8 w-8 bg-red-500">
               <IconsDelete class="text-white text-xl"/>
        
           </div>

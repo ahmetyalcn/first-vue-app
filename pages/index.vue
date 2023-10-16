@@ -1,6 +1,4 @@
 <script setup>
-const { data, error, execute, pending, status } = await useLazyFetch('https://jsonplaceholder.typicode.com/posts/')
-const toast = useToast();
 
 useHead({
   title: "AddYourNote"
@@ -9,12 +7,11 @@ useHead({
 </script>
 
 <template>
-  <div class="flex md:justify-between flex-col md:flex-row justify-center ">
+  <div class="flex flex-col md:flex-row  w-full">
     
     <MainMenu />
-    <div class="w-[33vw] p-4">
-      yan
-    </div>
+      <SearchNote/>
+  
   </div>
 </template>
 

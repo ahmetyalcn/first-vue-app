@@ -25,7 +25,5 @@ export default defineNuxtConfig({
     dirs: ["stores","vuefire"]
   },
   plugins:["~/plugins/firebase/firestore"],
-  build: {
-    transpile: ['firestore']
-  }
+
 })

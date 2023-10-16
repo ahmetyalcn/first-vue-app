@@ -5,7 +5,7 @@ useHead({
 
 </script>
 <template>
-    <div>
-        about
+    <div class="w-full">
+        
     </div>
 </template>

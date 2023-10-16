@@ -1,8 +1,4 @@
-// plugins/firebase/firestore.js
-
 import { collection, addDoc,deleteDoc, doc } from 'firebase/firestore';
-
-// Export the Firestore functions to use in your components/pages.
 
 export default defineNuxtPlugin(() => {
 

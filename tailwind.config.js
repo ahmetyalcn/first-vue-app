@@ -7,7 +7,8 @@ export default {
       colors:{
       'green': '#03B771',
       'yellow': '#FFD24F',
-      'brown': '#431D23'
+      'brown': '#431D23',
+      'amber' : '#F5F4E4'
     }
     },
    
