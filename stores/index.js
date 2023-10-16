@@ -1,38 +1,48 @@
+import { addDoc } from "firebase/firestore"
+
+
 
 export const useMainStore = defineStore('main',
     {
-        state: ()=>({
+        state: () => ({
             notes: []
         }),
         getters: {
-            getNotes: state => state.notes,
+            getNotes: computed((state) => state.notes),
         },
         actions: {
             async getAllNotes() {
-                this.notes = await $fetch("/api/hello")
+                const { $useTodos } = useNuxtApp()
+                watch(() => $useTodos.value, (newNotes) => {
+                    this.notes = newNotes
+                });
+
+                
             },
-            async addNote(note){
-                const obj = {
-                    id: this.getNotes.length,
+            async addNote(note) {
+                try {
+                  const { $addNote } = useNuxtApp();
+                  const obj = {
+                    id: this.notes.length,
                     title: note.title,
                     content: note.content
+                  };
+                  
+                  const res = await $addNote(obj);
+    
+                  console.log(res);
+                } catch (error) {
+                  console.error('Error adding note:', error);
+                  // Handle the error (e.g., show a message to the user)
                 }
-                
-                const res = await $fetch("/api/hello", {
-                    method:"POST",
-                    body: obj                
+              },
+            async deleteNote(id) {
+                await $fetch("/api/" + id, {
+                    method: "DELETE"
                 })
-                this.notes.push(obj)
-                console.log(res)
-                //this.notes.unshift(obj);
-            },
-            async deleteNote(id){
-                await $fetch("/api/"+id,{
-                    method:"DELETE"
-                })
-                this.notes = this.notes.filter(n=>n.id != id)
+                this.notes = this.notes.filter(n => n.id != id)
             }
         }
     }
-   
+
 )

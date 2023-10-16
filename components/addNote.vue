@@ -1,5 +1,4 @@
 <script setup>
-import { toDisplayString } from 'vue';
 
     const store = useMainStore();
     const val = reactive({
