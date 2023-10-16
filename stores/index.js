@@ -23,7 +23,6 @@ export const useMainStore = defineStore('main',
                 try {
                   const { $addNote } = useNuxtApp();
                   const obj = {
-                    id: this.notes.length,
                     title: note.title,
                     content: note.content
                   };
@@ -36,11 +35,10 @@ export const useMainStore = defineStore('main',
                   // Handle the error (e.g., show a message to the user)
                 }
               },
-            async deleteNote(id) {
-                await $fetch("/api/" + id, {
-                    method: "DELETE"
-                })
-                this.notes = this.notes.filter(n => n.id != id)
+            async deleteNote(note) {
+                const { $deleteNote } = useNuxtApp();
+                const res = await $deleteNote(note.id);
+                console.log(res);
             }
         }
     }

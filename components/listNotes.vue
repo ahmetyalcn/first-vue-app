@@ -14,7 +14,7 @@ onMounted(async () => {
           <p> {{ d.content }}</p>
             </div>
          
-          <div @click="store.deleteNote(d.id)" class="h-auto rounded-sm flex justify-center items-center cursor-pointer w-auto bg-red-500">
+          <div @click="store.deleteNote(d)" class="h-auto rounded-sm flex justify-center items-center cursor-pointer w-auto bg-red-500">
               <IconsDelete class="text-white text-xl"/>
        
           </div>
