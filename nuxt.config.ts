@@ -1,6 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { resolve } from 'path'
 export default defineNuxtConfig({
+  app:{
+    head:{
+      title:"Add your notes",
+      meta:[
+        {
+           name:"viewport",
+          content:"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+        },
+        {
+          name:"description",
+          content:"You can add your notes easily and quickly"
+        }
+      ],
+    }
+  },
   alias: {
     '@': resolve(__dirname, '/'),
 
